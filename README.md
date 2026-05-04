@@ -1,50 +1,50 @@
 # repojump
 
-Plugin de fish para abrir en el navegador la pagina del repositorio git del directorio actual.
+Fish plugin to open the current git repository in your browser.
 
-Detecta el remote de git, construye la URL del repositorio y abre rutas comunes como pull requests, merge requests e issues.
+It detects the git remote, builds the repository URL, and opens common pages like pull requests, merge requests, and issues.
 
-## Instalacion
+## Installation
 
-### Con Fisher
+### With Fisher
 
 ```fish
 fisher install l.alcaras/repojump
 ```
 
-### Instalacion manual
+### Manual Installation
 
 ```fish
 cp functions/rj.fish ~/.config/fish/functions/
 cp completions/rj.fish ~/.config/fish/completions/
 ```
 
-Despues de la instalacion manual, recarga fish o abre una nueva terminal.
+After manual installation, reload fish or open a new terminal.
 
-## Uso
+## Usage
 
 ```fish
 rj
 ```
 
-Abre la pagina principal del repositorio.
+Opens the repository home page.
 
 ```fish
 rj pr
 rj mr
 ```
 
-Abren la pagina de pull requests en GitHub o merge requests en GitLab. `pr` y `mr` son equivalentes y actuan segun el proveedor detectado.
+Opens the pull requests page on GitHub or the merge requests page on GitLab. `pr` and `mr` are equivalent and behave according to the detected provider.
 
 ```fish
 rj issues
 ```
 
-Abre la pagina de issues.
+Opens the issues page.
 
-## Comandos soportados
+## Supported Commands
 
-| Comando | GitHub | GitLab |
+| Command | GitHub | GitLab |
 | --- | --- | --- |
 | `rj` | Repo home | Repo home |
 | `rj pr` | `/pulls` | `/-/merge_requests` |
@@ -58,46 +58,46 @@ Abre la pagina de issues.
 | `rj commits` | `/commits` | `/-/commits` |
 | `rj settings` | `/settings` | `/-/settings/general` |
 
-Tambien puedes pasar cualquier ruta no soportada explicitamente:
+You can also pass any path that is not explicitly supported:
 
 ```fish
 rj milestones
 ```
 
-Esto abre `<repo-url>/milestones`.
+This opens `<repo-url>/milestones`.
 
-## Opciones
+## Options
 
-### Usar otro remote
+### Use Another Remote
 
-Por defecto usa `origin`.
+By default, it uses `origin`.
 
 ```fish
 rj --remote upstream
 rj -r upstream issues
 ```
 
-### Forzar proveedor
+### Force Provider
 
-Puedes forzar el proveedor cuando la deteccion automatica no sea suficiente, por ejemplo en instancias self-hosted.
+You can force the provider when automatic detection is not enough, for example on self-hosted instances.
 
 ```fish
 rj --provider gitlab mr
 rj -p github pr
 ```
 
-Proveedores soportados:
+Supported providers:
 
 - `github`
 - `gitlab`
 
-Tambien puedes configurar un proveedor por defecto para remotes no detectados:
+You can also configure a default provider for undetected remotes:
 
 ```fish
 set -U GTB_PROVIDER gitlab
 ```
 
-## Formatos de remote soportados
+## Supported Remote Formats
 
 - `git@github.com:owner/repo.git`
 - `https://github.com/owner/repo.git`
