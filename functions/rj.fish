@@ -122,12 +122,7 @@ function _rj_detect_provider -a base_url
     else if string match -qr 'gitlab\.' -- "$base_url"
         echo gitlab
     else
-        # Allow override via universal variable
-        if set -q GTB_PROVIDER
-            echo "$GTB_PROVIDER"
-        else
-            echo unknown
-        end
+        echo unknown
     end
 end
 

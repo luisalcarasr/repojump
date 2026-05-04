@@ -91,12 +91,6 @@ Supported providers:
 - `github`
 - `gitlab`
 
-You can also configure a default provider for undetected remotes:
-
-```fish
-set -U GTB_PROVIDER gitlab
-```
-
 ## Supported Remote Formats
 
 - `git@github.com:owner/repo.git`
