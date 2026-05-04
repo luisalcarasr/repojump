@@ -9,17 +9,30 @@ It detects the git remote, builds the repository URL, and opens common pages lik
 ### With Fisher
 
 ```fish
-fisher install l.alcaras/repojump
+fisher install luisalcarasr/repojump
 ```
 
 ### Manual Installation
+
+Clone the repository:
+
+```fish
+git clone git@github.com:luisalcarasr/repojump.git
+cd repojump
+```
+
+Copy the function and completions into your fish config:
 
 ```fish
 cp functions/rj.fish ~/.config/fish/functions/
 cp completions/rj.fish ~/.config/fish/completions/
 ```
 
-After manual installation, reload fish or open a new terminal.
+Reload fish or open a new terminal.
+
+```fish
+exec fish
+```
 
 ## Usage
 
